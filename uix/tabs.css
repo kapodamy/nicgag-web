@@ -1,0 +1,80 @@
+tabs {
+    /* defaults */
+    --color-selected: black;
+    --color-hover-text: black;
+    --color-hover-control: whitesmoke;
+    --color-disabled: darkgray;
+    /* --color-active: coral; */
+    --color-font: #999;
+    --color-detail: transparent;
+    --font-weight: 700;
+    
+    height: 48px;
+    width: -moz-calc(100% - 8px);
+    width: -webkit-calc(100% - 8px);
+    width: -ms-calc(100% - 8px);
+    width: -o-calc(100% - 8px);
+    width: calc(100% - 8px);
+    margin: 0 4px;
+    box-shadow: 0 2px 2px rgba(0,0,0,.2);
+}
+
+body.darktheme tabs {
+    color: white;
+    --color-font: #b6b6b6;
+    --color-selected: white;
+    --color-hover-text: white;
+    box-shadow: 0 2px 2px rgba(255,255,255,.2);
+}
+
+
+
+tabs {
+    -moz-user-select: none;
+    user-select: none;
+    display: table;
+    table-layout: fixed;
+}
+
+tabs tab  {
+    text-decoration: none;   
+    color: var(--color-font);
+    font-weight: var( --font-weight);
+    line-height: 27px;
+    padding: 9px 16px;
+    border-bottom: 2px solid var(--color-detail);
+    display: table-cell;
+    text-align: center;
+}
+
+tabs tab.selected {
+    color: var(--color-font-selected);
+    font-weight: var( --font-weight);
+    box-sizing: border-box;
+    padding: 10px 16px 8px 16px;
+    border-bottom: 2px solid var(--color-selected);
+    text-align: center;
+}
+
+tabs tab:hover {
+    color: var(--color-hover-text);
+}
+
+tabs tab:not(.selected):not(.disabled):hover {
+    background-color: var(--color-detail);
+    border-bottom-color: var(--color-font);
+    cursor: pointer;
+}
+
+tabs tab.disabled {
+    color: var(--color-disabled);
+}
+
+tabs tab.disabled:hover {
+    border-bottom-color: var(--color-font);
+}
+
+tabs tab:not(.selected):not(.disabled):active {
+    color: var(--color-active);
+    border-bottom-color: var(--color-active);
+}

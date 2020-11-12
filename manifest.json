@@ -1,0 +1,37 @@
+{
+    "name": "NicGAG WEB",
+    "developer": {
+        "name": "kapodamy",
+        "url": "taringa.net/lossles_kapodamy"
+    },
+    "default_locale": "en",
+    "description": "__MSG_description__",
+    "manifest_version": 2,
+    "version": "0.0.20",
+    "permissions": [
+        "webRequest",
+        "webRequestBlocking",
+        "downloads",
+        "*://9gag.com/*"
+    ],
+    "background": {
+        "scripts": ["nicgag_loader.js", "service.js"]
+    },
+    "icons": {
+        "96":  "/icons/launcher-icon-96.png",
+        "144": "/icons/launcher-icon-144.png",
+        "192": "/icons/launcher-icon-192.png"
+    },
+    "content_scripts": [{
+        "matches": ["*://9gag.com/*"],
+        "js": ["downloads.js"],
+        "run_at": "document_end"
+    }],
+    "web_accessible_resources": ["nicgag.html", "nicgag.webmanifest", "*.js", "*.css", "templates/*.png", "splash_screen.svg", "templates/*.webm"],
+    "applications": {
+        "gecko": {
+            "id": "NicGAGWEB@kapodamy",
+            "strict_min_version": "68.0"
+        }
+    }
+}

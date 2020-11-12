@@ -1,0 +1,82 @@
+body switch {
+    --color-control-foreground: #eee;
+    --color-control-background: #999;
+    --color-control-disabled: darkgray;
+    --color-control-active: #07f;
+}
+
+switch {
+    display: block;
+    width: 25px;
+    height: 18px;
+}
+
+switch>switch-bg {
+    background-color: var(--color-control-foreground);
+    display: block;
+    width: 24px;
+    height: 14px;
+    border-radius: 7px;
+    
+    -o-transition: 0.1s ease;
+    -ms-transition: 0.1s ease;
+    -webkit-transition: 0.1s ease;
+    -moz-transition: 0.1s ease;
+    transition: 0.1s ease;
+    
+    -o-transition-property: right, background-color;
+    -ms-transition-property: right, background-color;
+    -webkit-transition-property: right, background-color;
+    -moz-transition-property: right, background-color;
+    transition-property: right, background-color;
+}
+
+switch>switch-bg {
+    margin: 4px;
+}
+
+switch>switch-fg {
+    background-color: var(--color-control-background);
+    position: relative;
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    box-shadow: 0 1px 1px rgba(0,0,0,.2);
+    bottom: 21px;
+    
+    right: 0px;
+    
+    -o-transition: 0.1s linear;
+    -ms-transition: 0.1s linear;
+    -webkit-transition: 0.1s linear;
+    -moz-transition: 0.1s linear;
+    transition: 0.1s linear;
+    
+    -o-transition-property: right, background-color;
+    -ms-transition-property: right, background-color;
+    -webkit-transition-property: right, background-color;
+    -moz-transition-property: right, background-color;
+    transition-property: right, background-color;
+}
+
+switch.switch-toggle>switch-fg,
+switch.switch-toggle>switch-bg  {
+    background-color: var(--color-control-active);
+}
+
+switch.switch-toggle>switch-bg {
+    opacity: 0.8;
+}
+
+switch.switch-toggle>switch-fg {
+    right: -12px;
+}
+
+switch.switch-disabled>switch-bg,
+switch.switch-disabled>switch-fg {
+    background-color: var(--color-control-disabled);
+}
+switch.switch-disabled>switch-fg {
+    box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.3);
+}

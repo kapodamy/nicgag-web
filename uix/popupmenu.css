@@ -1,0 +1,57 @@
+popup-menu {
+    /* defaults */
+    --color-selected: #000;
+    --color-hover-text: #000;
+    --color-hover-control: rgba(0, 0, 0, .03);
+    --color-disabled: red;
+    --color-active: rgba(0,0,0,.075);
+    --color-font: #999;
+    --color-detail: transparent;
+    --font-weight: 700;
+    --color-shadow: rgba(0,0,0,0.35);
+}
+
+popup-menu {
+    position: absolute;
+    z-index: 3;
+    min-width: 160px;
+    color: var(--color-font);
+	font-size: 14px;
+}
+
+popup-menu ul {
+    list-style-type: none;
+    overflow: auto;
+    background-color: #fff;
+    box-shadow: 0 5px 10px var(--color-shadow);
+    box-sizing: border-box;
+    padding: 0;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+popup-menu>ul>li>div, popup-menu>ul>li>a {
+	display: block;
+	line-height: 2.7em;
+	padding-left: 1.5em;
+	padding-right: 1em;
+}
+
+popup-menu>ul>li.disabled {
+    -moz-user-select: none;
+    user-select: none;
+    color: var(--color-disabled);
+}
+
+popup-menu>ul>li.disabled:hover {
+    text-decoration: line-through;
+}
+
+popup-menu>ul>li:not(.disabled):hover {
+    cursor: pointer;
+    background-color: var(--color-hover-control);
+}
+
+popup-menu>ul>li:not(.disabled):active {
+    background-color: var(--color-active);
+}

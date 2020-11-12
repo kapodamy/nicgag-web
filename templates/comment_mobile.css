@@ -1,0 +1,224 @@
+body/*:not(.darktheme)*/ {
+    ---color-hover: #707070;
+    ---color-border: lightgray;
+    ---color-hover-body: hsla(0, 0%, 0%, 0.05);
+}
+body.darktheme {
+    ---color-hover: whitesmoke;
+    ---color-border: #222222;
+    ---color-hover-body: #22222290;
+}
+
+.comment-entry {
+    border-bottom: 1px solid var(---color-border);
+    padding: 8px 0;
+}
+
+.comment-entry.pinned {
+    box-shadow: inset 0 0 10px #ff9500;
+}
+
+.comment-entry:hover {
+    transition: background-color .1s;
+    background-color: var(---color-hover-body);
+}
+
+.comment-entry a {
+    text-decoration: none;
+}
+
+
+.comment-entry .avatar {
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    padding-top: 4px;
+    padding-right: 8px;
+    float: left;
+    margin-left: 16px;
+}
+
+.comment-entry .avatar a {
+    background-color: #f4f4f4;
+    border-radius: 50%;
+    display: block;
+}
+
+.comment-entry .avatar img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 50%;
+}
+
+.comment-entry .comment-body {
+    padding-right: 16px;
+    margin-left: 65px;
+}
+
+
+.comment-entry .info {
+    display: inline-flex;
+    align-items: center;
+
+    height: 20px;
+
+    color: inherit;
+    white-space: nowrap;
+}
+
+.comment-entry .info .meta-time {
+    font-size: 12px;
+    vertical-align: bottom;
+    color: #999;
+}
+
+.comment-entry .info .badge {
+    margin-right: 4px;
+    padding: 3px 2px;
+    border-radius: 2px;
+    text-indent: 1px;
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 14px;
+
+
+}
+
+.comment-entry .info .badge {
+    background: #fc0;
+}
+
+.comment-entry .info .badge:not(.plus)>span {
+    display: none;
+}
+
+.comment-entry .info .badge.plus {
+    background: #ff9500;
+}
+
+.comment-entry .info .status, .comment-entry .blue-tick-small {
+    font-weight: 700;
+    margin-right: 4px;
+    vertical-align: middle;
+}
+
+.comment-entry .info .username {
+    font-weight: 700;
+    color: inherit;
+    margin-right: 4px;
+    vertical-align: bottom;
+}
+
+.comment-entry .info .username.op, .comment-entry .info .username.me {
+    display: inline-block;
+    align-items: center;
+    border-radius: 5px;
+    padding: 0 4px;
+    color: white;
+}
+
+.comment-entry .info .username.op {
+    background-color: #07f;
+    border: 1px solid darkcyan;
+}
+
+.comment-entry .info .username.me {
+    background-color: #fb571b;
+    border: 1px solid orangered;
+}
+
+.comment-entry .content {
+    line-height: 20px;
+    word-break: normal;
+    overflow-wrap: break-word;
+}
+
+.comment-entry .media {
+    margin-top: 8px;
+    box-sizing: border-box;
+}
+
+.comment-entry .media .img-embed img, .comment-entry .media .img-embed video {
+    max-width: 100%;
+    max-height: 400px;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+
+.comment-entry .action {
+    display: flex;
+    flex-direction: row;
+    height: 20px;
+    min-height: 20px;
+    margin-top: 8px;
+    color: #999;
+    white-space: nowrap;
+    font-weight: 700;
+}
+
+.comment-entry .action div {
+    cursor: pointer;
+    flex-grow: 1;
+    height: 20px;
+}
+
+.comment-entry .action div:not(:nth-child(1)) {
+    padding-left: 10px;
+}
+
+.comment-entry .action div:not(.active):hover {
+    color: var(---color-hover);
+}
+
+.comment-entry .action>div:last-child {
+    font-size: 18px;
+    line-height: 8px;
+}
+
+.comment-entry .action .icon-comment-vote-up:before, .comment-entry .action .icon-comment-vote-down:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 6px;
+}
+
+.comment-entry .action .active {
+    color: #07f;
+}
+
+.comment-entry .more-replies {
+    padding: 4px 0;
+    line-height: 20px;
+    white-space: nowrap;
+    color: inherit;
+    font-weight: 700;
+    display: inline-block;
+    margin-top: 8px;
+}
+
+.comment-entry.comment-child {
+    border: none;
+}
+
+.comment-entry.comment-child .avatar {
+    width: 24px;
+    height: 24px;
+    padding-left: 16px;
+}
+
+.comment-entry .media .img-embed {
+    display: block;
+    box-sizing: border-box;
+}
+
+.user-mention {
+    /* font-weight: bold; */
+    color: #09f;
+}
+

@@ -1,0 +1,110 @@
+body snackbar-menu {
+    /** white theme **/
+    --divider-color: darkgray;
+    --text-color: black;
+    --background-color: white;
+    
+    --color-disabled: red;
+    --color-active: rgba(0,0,0,.075);
+}
+
+body.darktheme snackbar-menu {
+    --divider-color: #333;
+    --background-color: #222;
+    --text-color: white;
+}
+
+snackbar-menu {
+    position: fixed;
+    z-index: 20;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 0.5em 0 0.5em;
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
+    /*max-height: 100%;*/
+}
+
+snackbar-menu>ul {
+    list-style: none;
+    overflow-y: auto;
+    webkit-overflow-scrolling: touch;
+    background-color: var(--background-color);
+    border-bottom: 1px solid var(--divider-color);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin: 0;
+    padding: 8px 0;
+}
+
+snackbar-menu>ul>li {
+    -moz-user-select: none;
+    user-select: none;
+}
+
+snackbar-menu>ul>li.divider {
+    height: 1px;
+    width: 100%;
+    margin: 8px 0;
+    display: block;
+    background-color: var(--divider-color);
+}
+
+snackbar-menu>ul>li>thumbnail {
+    left: 18px;
+    top: 12px;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    overflow: hidden;
+}
+
+snackbar-menu>ul>li>thumbnail>img.snackbar-menu-thumbnail {
+    width: 100%
+}
+
+snackbar-menu>ul>li>item {
+    -ms-flex-grow: 1;
+    -o-flex-grow: 1;
+    -moz-flex-grow: 1;
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+}
+
+snackbar-menu>ul>li>extra {
+    padding: 0 20px;
+}
+
+
+snackbar-menu>ul>li:not(.divider) {
+    padding: 12px 16px 12px 72px;
+    line-height: 24px;
+    position: relative;
+    
+    color: var(--text-color);
+    
+    display: -ms-flex;
+    display: -o-flex;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+}
+
+snackbar-menu>ul>li.disabled {
+    /*text-decoration: line-through;*/
+    opacity: 0.5;
+}
+
+snackbar-menu>ul>li.cursor-pointer:not(.disabled):active {
+    background-color: var(--color-active);
+}
+
+snackbar-menu>ul>li.cursor-pointer>item, snackbar-menu>ul>li.cursor-pointer>extra {
+    cursor: pointer;
+}
+
+snackbar-menu>ul>li.disabled>item, snackbar-menu>ul>li.disabled>extra {
+    cursor: not-allowed;
+}
+

@@ -1,0 +1,13 @@
+infinite-list {
+    overflow-y: auto;
+    height: inherit;
+    display: block;
+}
+
+infinite-list page-holder {
+    margin: 0;
+    padding: 0;
+    display: block;
+    overflow: hidden;
+}
+

@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="shortcut icon" href="/favicon.ico">
+        <title>&#119847;&#119842;&#119836;GAG:Go Fun The World</title>
+
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+
+        <link rel="preconnect" href="https://img-9gag-fun.9cache.com">
+        <link rel="preconnect" href="https://miscmedia-9gag-fun.9cache.com">
+
+        <meta name="nicgag-error-background" content="@@@templates/error_background.webm">
+        <meta name="nicgag-i18n" content="@@@i18n/"></script>
+
+
+
+        <!-- Note:                                                    -->
+        <!-- @@@ are replaced with moz-extension://%%%ID_EXTENSION%%/ -->
+        <!--                                                          -->
+
+        <script type="text/javascript" src="@@@i18n/selector.js"></script>
+        <script type="text/javascript" src="@@@i18n/loader.js"></script>
+
+        <link rel="stylesheet" href="@@@icons.css" />
+        <link rel="stylesheet" href="@@@index.css"/>
+
+        <!--  API    API    API    API    API    API    API    API    -->
+        <script type="text/javascript" src="@@@api_nicgag.js"></script>
+        <script type="text/javascript" src="@@@api.js"></script>
+        <script type="text/javascript" src="@@@api_wrapper.js" defer></script>
+
+
+        <script type="text/javascript" src="@@@network.js"></script>
+        <script type="text/javascript" src="@@@utils.js"></script>
+        <script type="text/javascript" src="@@@uix/base.js"></script>
+
+        <!--  UIX  UIX  UIX  UIX  UIX  UIX  UIX  UIX  UIX  UIX  UIX  -->
+        <link rel="stylesheet" href="@@@uix/infinitelist.css"/>
+        <script type="text/javascript" src="@@@uix/infinitelist.js" defer></script>
+        <link rel="stylesheet" href="@@@uix/tabs.css" />
+        <script type="text/javascript" src="@@@uix/tabs.js" defer></script>
+        <link rel="stylesheet" href="@@@uix/snackbarmenu.css" />
+        <script type="text/javascript" src="@@@uix/snackbarmenu.js" defer></script>
+        <link rel="stylesheet" href="@@@uix/switch.css" />
+        <script type="text/javascript" src="@@@uix/switch.js" defer></script>
+        <link rel="stylesheet" href="@@@uix/snackbar.css" />
+        <script type="text/javascript" src="@@@uix/snackbar.js" defer></script>
+
+
+        <!--  9GAG TEMPLATES   9GAG TEMPLATES   9GAG TEMPLATES   -->
+        <link rel="stylesheet" href="@@@templates/post_mobile.css" />
+        <script type="text/javascript" src="@@@templates/post_mobile.js"></script>
+        <link rel="stylesheet" href="@@@templates/comment_mobile.css" />
+        <script type="text/javascript" src="@@@templates/comment_mobile.js"></script>
+
+        <!--  9GAG CCS TEMPLATES   9GAG CSS TEMPLATES   9GAG CSS TEMPLATES   -->
+        <link rel="stylesheet" href="@@@templates/headers.css" />
+        <link rel="stylesheet" href="@@@templates/features_posts.css" />
+        <link rel="stylesheet" href="@@@templates/report_modal.css" />
+        <link rel="stylesheet" href="@@@templates/slideout_menu.css" />
+        <link rel="stylesheet" href="@@@templates/reply.css" />
+
+
+
+        <!--   HELPER LIBRARIES   HELPER LIBRARIES   HELPER LIBRARIES   -->
+        <script type="text/javascript" src="@@@slideoutlistfactory.js" defer></script>
+        <script type="text/javascript" src="@@@liststatus.js" defer></script>
+        <script type="text/javascript" src="@@@listadapter.js" defer></script>
+        <script type="text/javascript" src="@@@autoplay.js" defer></script>
+        <script type="text/javascript" src="@@@screenwakelock.js" defer></script>
+        <script type="text/javascript" src="@@@mediawrap.js" defer></script>
+        <script type="text/javascript" src="@@@fullpreview.js" defer></script>
+
+
+        <!--   EXTERNAL LIBRARIES   EXTERNAL LIBRARIES   EXTERNAL LIBRARIES   -->
+        <script type="text/javascript" src="@@@libraries/marked.js" defer></script>
+        <script type="text/javascript" src="@@@libraries/panzoom.js" defer></script>
+
+
+        <!-- 9GAGCONFIG -->
+    </head>
+    <body>
+        <div id="splash"></div>
+        <script type="text/javascript" src="@@@darkthemeenabler.js"></script>
+
+        <div id="shade"></div>
+        
+        <header id="header-search" class="hidden">
+            <div class="header-button">
+                <div class="icon-dismiss"></div>
+            </div>
+            <form class="search-bar">
+                <div class="search-container">
+                    <input type="text" placeholder="Search keywords…"/>
+                    <div class="icon-cross-search"></div>
+                </div>
+                <input class="icon-search" type="submit" value=""/>
+            </form>
+        </header>
+        <header id="header-preview" class="hidden">
+            <div class="left">
+                <div>
+                    <div class="header-button">
+                        <div class="icon-dismiss"></div>
+                    </div>
+                </div>
+                <h4 class="title">Full preview</h4>
+            </div>
+            <div class="right">
+                <div class="icon-playback"></div>
+                <div class="icon-download"></div>
+                <div class="icon-share"></div>
+            </div>
+        </header>
+        <header class="comment-shadow hidden" id="comment-header">
+            <div class="left">
+                <div>
+                    <div class="header-button">
+                        <div class="icon-dismiss"></div>
+                    </div>
+                </div>
+                <h4 class="title"></h4>
+            </div>
+            <div class="right">
+                <div id="comment-btn" class="disabled">Post</div>
+            </div>
+        </header>
+        <header id="main-header">
+            <header id="navbar">
+                <div class="left">
+                    <div>
+                        <div class="header-button sidebar-menu">
+                            <div class="icon-menu"></div>
+                        </div>
+                        <div class="header-button back-comment">
+                            <div class="icon-back"></div>
+                        </div>
+                        <div class="header-button back-thread">
+                            <div class="icon-back"></div>
+                        </div>
+                        <a class="logo" href="?"><div></div></a>
+                    </div>
+                    <h4 class="title hidden"></h4>
+                </div>
+                <div class="right">
+                    <div class="icon-offline hidden"></div>
+                    <a target="_blank" href="/search" class="icon-search"></a>
+                    <a target="_blank" href="/notifications" class="icon-noti"><div class="unread-badge hidden"></div><div class="unread-count"></div></a>
+                    <a target="_blank" href="/login" class="icon-user">
+                        <img/>
+                    </a>
+                </div>
+            </header>
+            <tabs id="home-tabs">
+                <tab class="selected">Hot</tab>
+                <tab>Trending</tab>
+                <tab>Fresh</tab>
+            </tabs>
+        </header>
+
+        <infinite-list id="page-home"></infinite-list>
+        <infinite-list id="page-gag" class="hidden"></infinite-list>
+        <infinite-list id="page-thread" class="hidden"></infinite-list>
+        <section id="comment-editor" class="hidden">
+            <div id="comment-hint"></div>
+            <textarea placeholder="Your Comment Will Be Something Like…"></textarea>
+            <div id="attached-media">
+                <div title="Attach something from you meme folder" class="container file-picker">
+                    <div class="icon-gallery"></div>
+                    <input type="file" name="blob" style="visibility: collapse;">
+                </div>
+            </div>
+            <div id="comment-editor-shade" class="hidden"></div>
+        </section>
+        <section id="page-preview" class="hidden"></section>
+        <section id="page-home-search" class="hidden">
+            <div class="search-for search-item hidden">
+                    <div class="icon-search"></div><span>Search for "<span></span>"</span>
+                </div>
+            <div class="search-list">
+                <header>RECENTS<span>CLEAR</span></header>
+                <hr/>
+                <div></div>
+            </div>
+            <div class="tags-list hidden">
+                <header>TAGS</header>
+                <hr/>
+                <div></div>
+            </div>
+        </section>
+
+        <footer id="footer-comment">
+          <div></div>
+        </footer>
+
+        <snackbar-menu id="snackbar-user" class="hidden">
+            <ul style="padding-bottom: 5vh;">
+                <li class="cursor-pointer login">
+                    <thumbnail>
+                        <div class="icon-user"></div>
+                    </thumbnail>
+                    <item>
+                        <a href="/login">Log in on 9GAG</a>
+                    </item>
+                </li>
+                <li class="user cursor-pointer">
+                    <thumbnail>
+                        <img src class="profile-img">
+                    </thumbnail>
+                    <item>
+                        <a href>
+                            username
+                            <span class="status"></span>
+                        </a>
+                    </item>
+                    <extra>
+                        <a href id="logout">Log out</a>
+                    </extra>
+                </li>
+                <li class="divider"></li>
+                <li class="cursor-pointer">
+                    <thumbnail>
+                        <div class="fullscreen icon-fullscreen"></div>
+                    </thumbnail>
+                    <item>Toggle Fullscreen</item>
+                </li>
+                <li>
+                    <thumbnail>
+                        <div class="icon-darkmode"></div>
+                    </thumbnail>
+                    <item>Dark Mode</item>
+                    <extra>
+                        <switch id="darkmode-switch">
+                            <switch-bg></switch-bg>
+                            <switch-fg></switch-fg>
+                        </switch>
+                    </extra>
+                </li>
+                <li class="divider"></li>
+                <li class="settings cursor-pointer">
+                    <thumbnail>
+                        <div class="icon-settings"></div>
+                    </thumbnail>
+                    <item>
+                        <a target="_blank" href>9GAG Settings & more</a>
+                    </item>
+                </li>
+                <li class="settings cursor-pointer">
+                    <thumbnail>
+                        <div class="icon-settings"></div>
+                    </thumbnail>
+                    <item>&#119847;&#119842;&#119836;GAG Settings</item>
+                </li>
+                <li class="settings cursor-pointer hidden">
+                    <thumbnail>
+                        <div class="icon-settings"></div>
+                    </thumbnail>
+                    <item>
+                        <a href="@@@nicgag.html" target="_blank">Add <b>&#119847;&#119842;&#119836;GAG</b> shortcut in your Home Screen!</a>
+                    </item>
+                </li>
+            </ul>
+        </snackbar-menu>
+
+        <snackbar-menu id="snackbar-post-more" class="hidden">
+            <ul>
+                <li class="cursor-pointer">
+                    <thumbnail>
+                        <div class="icon-link"></div>
+                    </thumbnail>
+                    <item>Copy Link</item>
+                </li>
+                <li class="divider"></li>
+                <li class="cursor-pointer">
+                    <thumbnail>
+                        <div class="icon-break"></div>
+                    </thumbnail>
+                    <item>I don’t like this</item>
+                </li>
+                <li class="cursor-pointer section-hide">
+                    <thumbnail>
+                        <div class="icon-forbidden"></div>
+                    </thumbnail>
+                    <item>Hide <b></b> section</item>
+                </li>
+                <li class="cursor-pointer">
+                    <thumbnail>
+                        <div class="icon-hide"></div>
+                    </thumbnail>
+                    <item>This is a repost</item>
+                </li>
+                <li class="divider"></li>
+                <li class="cursor-pointer">
+                    <thumbnail>
+                        <div class="icon-report"></div>
+                    </thumbnail>
+                    <item>Report post</item>
+                </li>
+            </ul>
+        </snackbar-menu>
+
+        <snackbar-menu id="snackbar-post-share" class="hidden">
+            <ul>
+                <li>
+                    <thumbnail>
+                        <div class="icon-download"></div>
+                    </thumbnail>
+                    <item><a target="_blank">Download media</a></item>
+                </li>
+                <li class="native-share cursor-pointer">
+                    <thumbnail>
+                        <div class="icon-phone"></div>
+                    </thumbnail>
+                    <item><a style="text-decoration: underline;" target="_blank">Share to other app</a></item>
+                </li>
+                <li class="divider"></li>
+                <li>
+                    <thumbnail>
+                        <div class="icon-facebook"></div>
+                    </thumbnail>
+                    <item>
+                        <a class="facebook" target="_blank">Facebook</a>
+                    </item>
+                </li>
+                <li>
+                    <thumbnail>
+                        <div class="icon-pinterest"></div>
+                    </thumbnail>
+                    <item>
+                        <a class="pinterest" target="_blank">Pinterest</a>
+                    </item>
+                </li>
+                <li>
+                    <thumbnail>
+                        <div class="icon-twitter"></div>
+                    </thumbnail>
+                    <item>
+                        <a class="twitter" target="_blank">Twitter</a>
+                    </item>
+                </li>
+                <li>
+                    <thumbnail>
+                        <div class="icon-email"></div>
+                    </thumbnail>
+                    <item>
+                        <a class="email" target="_blank">Email</a>
+                    </item>
+                </li>
+                <li>
+                    <thumbnail>
+                        <div class="icon-whatsapp"></div>
+                    </thumbnail>
+                    <item>
+                        <a class="whatsapp" target="_blank">WhatsApp</a>
+                    </item>
+                </li>
+            </ul>
+        </snackbar-menu>
+
+        <snackbar-menu id="snackbar-comment-antiquity" class="hidden">
+            <ul>
+                <li class="cursor-pointer">
+                    <thumbnail><div class="icon-hot"></div></thumbnail>
+                    <item>Hot</item>
+                </li>
+                <li class="cursor-pointer">
+                    <thumbnail><div class="icon-recent"></div></thumbnail>
+                    <item>Fresh</item>
+                </li>
+            </ul>
+        </snackbar-menu>
+
+        <snackbar-menu id="snackbar-comment-menu" class="hidden">
+            <ul>
+                <li class="cursor-pointer">
+                    <thumbnail>
+                        <div class="icon-link"></div>
+                    </thumbnail>
+                    <item>Copy Link</item>
+                </li>
+                <li class="cursor-pointer">
+                    <thumbnail>
+                        <div class="icon-copy"></div>
+                    </thumbnail>
+                    <item>Copy comment to clipboard</item>
+                </li>
+                <li class="divider"></li>
+                <li class="cursor-pointer comment-follow">
+                    <thumbnail>
+                        <div class="icon-noti-active"></div>
+                    </thumbnail>
+                    <item>Unfollow</item>
+                </li>
+                <li class="cursor-pointer">
+                    <thumbnail>
+                        <div class="icon-trash"></div>
+                    </thumbnail>
+                    <item>Delete</item>
+                </li>
+                <li class="divider"></li>
+                <li class="cursor-pointer">
+                    <thumbnail>
+                        <div class="icon-break"></div>
+                    </thumbnail>
+                    <item>I don’t like this</item>
+                </li>
+                <li class="cursor-pointer">
+                    <thumbnail>
+                        <div class="icon-report"></div>
+                    </thumbnail>
+                    <item>Report</item>
+                </li>
+            </ul>
+        </snackbar-menu>
+
+        <snackbar-menu id="snackbar-nicgag-settings" class="hidden">
+            <ul>
+                <li>
+                    <item>Show the App always in english</item>
+                    <extra>
+                        <switch class="switch-toggle">
+                            <switch-bg></switch-bg>
+                            <switch-fg></switch-fg>
+                        </switch>
+                    </extra>
+                </li>
+                <li>
+                    <item>Restore posts list on startup</item>
+                    <extra>
+                        <switch>
+                            <switch-bg></switch-bg>
+                            <switch-fg></switch-fg>
+                        </switch>
+                    </extra>
+                </li>
+                <li>
+                    <item>Show last home section on startup</item>
+                    <extra>
+                        <switch>
+                            <switch-bg></switch-bg>
+                            <switch-fg></switch-fg>
+                        </switch>
+                    </extra>
+                </li>
+                <li>
+                    <item>Automatically follow comment threads</item>
+                    <extra>
+                        <switch>
+                            <switch-bg></switch-bg>
+                            <switch-fg></switch-fg>
+                        </switch>
+                    </extra>
+                </li>
+                <li>
+                    <item>Videos volume (default&nbsp;100%)</item>
+                    <extra>
+                        <input type="range" min="1" max="100" value="100" id="settings-default-volume" style="width: 100%;"/><label>100%</label>
+                    </extra>
+                </li>
+                <li>
+                    <item>Extra padding in the header</item>
+                    <extra>
+                        <switch class="">
+                            <switch-bg></switch-bg>
+                            <switch-fg></switch-fg>
+                        </switch>
+                    </extra>
+                </li>
+                <li>
+                    <item>Use GIFs in comments instead of video</item>
+                    <extra>
+                        <switch class="">
+                            <switch-bg></switch-bg>
+                            <switch-fg></switch-fg>
+                        </switch>
+                    </extra>
+                </li>
+            </ul>
+            <h2>&#119847;&#119842;&#119836;GAG</h2>
+        </snackbar-menu>
+
+        <nav id="slideout-menu" class="hidden">
+            <ul>
+                <li>
+                    <a href="/" class="go-home">
+                        <div class="icon-home"></div>
+                        Home
+                    </a>
+                    <div>
+                        <a href="/customize" title="Customize sections showing in homepage" class="customize icon-customize"></a>
+                    </div>
+                </li>
+                <li>
+                    <a class="new-post" target="_blank" href="/submit">
+                        <div class="icon-newpost"></div>
+                        <b>Submit new post</b>
+                    </a>
+                </li>
+                <li class="hidden error-feedback">
+                    <a>
+                        <div class="icon-feedback"></div><b>Show errors found</b>
+                    </a>
+                </li>
+            </ul>
+
+            <div id="user-defined-sections"></div>
+        </nav>
+
+        <section class="report-modal hidden">
+            <header>
+                <h1>Report</h1>
+                <p>Choosing the right reason help us process the report as soon as possible…</p>
+            </header>
+            <select>
+                <option selected hidden>Choose the reason…</option>
+            </select>
+            <article>
+                <div class="description"></div>
+            </article>
+            <div class="report-actions">
+                <div>BACK</div>
+                <div>REPORT</div>
+            </div>
+        </section>
+        
+        <section class="error-modal hidden">
+            <header>
+                <h1>Errores</h1>
+            </header>
+            <textarea style="height: 30vh;"></textarea>
+            <br>
+            <button>Clear &amp; close</button>
+        </section>
+
+        <!-- misc --><templates>
+            <template id="template-post-loading">
+                <div class="post-status-container">
+                    <div class="spinner">
+                        <div></div>
+                    </div>
+                    <div class="post-loading-error hidden">
+                        <button>Retry</button>
+                        <div>Network Error</div>
+                    </div>
+                </div>
+            </template>
+            <template id="template-featured-tag">
+                <ul class="featured-tag"></ul>
+            </template>
+            <template id="template-comment-end">
+                <div class="comments-end"></div>
+            </template>
+            <template id="template-item-search">
+                <div class="search-item">
+                    <div class="icon-tag icon-search"></div><a><span></span><span></span></a>
+                </div>
+            </template>
+            <div class="comment-antiquity">
+                    <span class="icon-collapse-down"><span>Hot</span> comments</span>
+            </div>
+        </templates>
+
+        <!-- post_mobile_* --><templates>
+
+            <template id="template-post_mobile_image">
+                <div style="text-align: center;">
+                    <img src alt loading="lazy">
+                    <a class="long"></a>
+                </div>
+            </template>
+
+            <template id="template-post_mobile_gif">
+                <div style="text-align: center;">
+                    <video muted poster alt loop playsinline preload="metadata"></video>
+                    <span class="post-indicator gif">GIF</span>
+                </div>
+            </template>
+
+            <template id="template-post_mobile_embed">
+                <div style="text-align: center;">
+                    <div class="iframe-error hidden">
+                        <h2>Error loading the embed content</h2>
+                        <a target="_blank" href>Open in new tab</a>
+                    </div>
+                    <iframe src scrolling="no" allowfullscreen="allowfullscreen" allow="encrypted-media" frameborder="0"></iframe>
+                </div>
+            </template>
+
+            <template id="template-post_mobile_video">
+                <div style="text-align: center;">
+                    <video poster alt loop playsinline preload="metadata"></video>
+                    <span class="post-indicator icon-play"></span>
+                    <div class="sound-toggle off"></div>
+                    <p class="post-label"></p>
+                </div>
+            </template>
+
+            <template id="template-post_mobile">
+            <article class="post-cell">
+                <header>
+                    <div class="post-top">
+                        <div class="post-section">
+                            <div>
+                                <a href>
+                                    <img src loading="lazy">
+                                    <div>
+                                        <span></span> · <span></span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="icon-favorite"></div>
+                        <div class="icon-more"></div>
+                    </div>
+                    <h3>
+                        <a href></a>
+                    </h3>
+                </header>
+                <div class="nsfw-mask">
+                    <h4>Sensitive Content</h4>
+                    <div>View</div>
+                </div>
+                <div class="post-content"></div>
+                <div class="footnote hidden"></div>
+                <div class="post-tag hidden"></div>
+                <div class="post-action">
+                    <div class="btn upvote"></div>
+                    <div class="btn downvote"></div>
+                    <a class="btn comment icon-comment" href></a>
+                    <div class="btn icon-share">SHARE</div>
+                </div>
+            </article>
+        </template>
+
+        </templates>
+
+        <!-- comment_mobile_* --><templates>
+
+            <template id="template-comment_mobile_image">
+                <a href target="_blank" class="img-embed">
+                    <div>
+                        <img src loading="lazy" />
+                    </div>
+                </a>
+            </template>
+
+            <template id="template-comment_mobile_animated">
+                <a href target="_blank" class="img-embed">
+                    <div>
+                        <video autoplay muted loop playsinline />
+                    </div>
+                </a>
+            </template>
+
+            <template id="template-comment_mobile">
+                <div class="comment-entry">
+                    <div class="avatar">
+                        <a href target="_blank"><img src loading="lazy"></a>
+                    </div>
+                    <div class="comment-body">
+                        <div class="info">
+                            <div>
+                                <a href class="username" target="_blank"></a><span class="blue-tick-small"></span><span class="status"></span><span title="9GAG Pro+ User" class="badge plus">PRO<span>+</span></span><span class="meta-time"></span>
+                            </div>
+                        </div>
+                        <div class="content"></div>
+                        <div class="media"></div>
+                        <div class="action">
+                            <div>Reply</div>
+                            <div class="icon-comment-vote-up"></div>
+                            <div class="icon-comment-vote-down"></div>
+                            <div>...</div>
+                        </div>
+                        <a href target="_blank" class="more-replies"></a>
+                    </div>
+                </div>
+            </template>
+
+        </templates>
+
+        <!-- featured_* --><templates>
+            <template id="template-featured-posts-item">
+                <a href class="featured-post" target="_blank">
+                    <img loading="lazy">
+                    <header>
+                        <p></p>
+                        <small></small> <small></small>
+                    </header>
+                </a>
+            </template>
+            <div class="featured-list-container">
+                <div class="featured-posts-toggle">
+                    <span>Featured posts</span>
+                    <div>show</div>
+                </div>
+                <section class="featured-list hidden"></section>
+            </div>
+        </templates>
+
+
+        <!-- 9GAGERROR -->
+
+        <script type="text/javascript" src="@@@indexhome.js" defer></script>
+        <script type="text/javascript" src="@@@indexhomesearch.js" defer></script>
+        <script type="text/javascript" src="@@@indexgag.js" defer></script>
+        <script type="text/javascript" src="@@@indexthread.js" defer></script>
+        <script type="text/javascript" src="@@@indexreply.js" defer></script>
+        <script type="text/javascript" src="@@@index.js"></script>
+    </body>
+</html>

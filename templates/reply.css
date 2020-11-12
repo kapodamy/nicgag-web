@@ -1,0 +1,141 @@
+body/*:not(.darktheme)*/ {
+    ---color-border: #eee;
+    ---color-hover: darkgray;
+    ---color-container: var(---color-border);
+}
+
+body.darktheme {
+    ---color-border: #757575;
+    ---color-hover: lightgray;
+    ---color-container: #01579b;
+}
+
+body.darktheme #comment-editor textarea {
+    background-color: #343434;
+    color: white;
+}
+
+#comment-editor {
+    overflow-y: scroll;
+}
+
+#comment-hint {
+    padding: 16px;
+    border-bottom: 1px solid var(---color-border);
+}
+
+#comment-hint .post-cell .post-action, #comment-hint .post-cell .icon-more,
+#comment-hint .comment-entry .action, #comment-hint .comment-entry .more-replies {
+    display: none;
+}
+
+#comment-hint .comment-entry {
+    border: none;
+    padding-bottom: 16px;
+}
+
+#comment-hint a {
+    pointer-events: none;
+    cursor: default;
+}
+
+#comment-hint .comment-child .avatar {
+    padding-left: 0;
+    margin-left: 0;
+}
+#comment-hint .comment-child .comment-body {
+    margin-left: 33px;
+    padding-right: 0;
+}
+
+
+#comment-editor textarea {
+    resize: vertical;
+    padding: 16px;
+    display: inline;
+    width: 100%;
+    border: none;
+    min-height: 120px;
+    line-height: 20px;
+    font-family: inherit;
+    font-size: 13px;
+    box-sizing: border-box;
+    margin-bottom: 0;
+}
+
+#attached-media {
+    border-top: 1px solid var(---color-border);
+    padding: 14px 24px;
+    width: calc(100vw - 48px);
+    border-bottom: 1px solid var(---color-border);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 62px);
+    grid-gap: 16px;
+}
+
+#attached-media li {
+}
+
+#attached-media .container {
+    background-color: var(---color-container);
+    width: 62px;
+    height: 62px;
+    border-radius: 10px;
+}
+
+#attached-media .file-picker {
+    align-items: center;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+#attached-media .file-picker:not(.hidden) {
+    display: flex;
+}
+
+#attached-media .file-picker:hover {
+    border-color: var(---color-hover);
+    transition: 200ms linear border-color;
+}
+
+
+#attached-media .icon-gallery {
+    margin: 0 auto;
+}
+body.darktheme #attached-media .icon-gallery {
+    background-image: white;
+}
+
+#attached-media .container img, #attached-media .container video {
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    /*! transform: translate(0, -20px); */
+    transform: translate(0, -16px);
+}
+
+#attached-media .icon-delete {
+    height: 16px;
+    background-color: red;
+    width: 16px;
+    float: right;
+    z-index: 2;
+    position: relative;
+    cursor: pointer;
+    border-radius: 5px;
+    opacity: 0.5;
+}
+
+#attached-media .icon-delete:hover {
+    opacity: 1;   
+}
+
+#comment-editor-shade {
+    background-color: rgba(0, 0, 0, 0.2);
+    position: fixed;
+    z-index: 10;
+    top: 48px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
