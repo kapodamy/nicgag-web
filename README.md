@@ -1,5 +1,5 @@
 # NicGAG Web
-## Custom Web Client for 9GAG
+## Custom Mobile Web Client for 9GAG
 
 This is a re-implementation of 9GAG webpage without React, only plain vainilla javascript. wich make the navigation faster. Since the original UI is replaced, some features of the page are not present and will displayed in its original UI (see not implemented pages list).
 <hr>
