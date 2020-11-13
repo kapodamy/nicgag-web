@@ -18,9 +18,9 @@
         "scripts": ["nicgag_loader.js", "service.js"]
     },
     "icons": {
-        "96":  "/icons/launcher-icon-96.png",
-        "144": "/icons/launcher-icon-144.png",
-        "192": "/icons/launcher-icon-192.png"
+        "32":  "/icons/icon-32.png",
+        "64": "/icons/icon-64.png",
+        "128": "/icons/icon-128.png"
     },
     "content_scripts": [{
         "matches": ["*://9gag.com/*"],
